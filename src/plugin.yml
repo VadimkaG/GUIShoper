@@ -1,0 +1,35 @@
+name: GUIShoper
+version: 1.0
+main: ru.vadimka.guishoper.Loader
+author: Vadimka
+depend: [ Vault ]
+commands:
+  gsreload:
+    description: 'Перезагружает плагин'
+    usage: /<command>
+  gshelp:
+    description: 'Помощь по плагину'
+    usage: /<command>
+  shop:
+    description: 'Открыть магазин'
+    usage: /<command>
+  gsadditem:
+    description: 'Сохранить предмет'
+    usage: /<command> <alias> <price> [description]
+permissions:
+  guishoper.*:
+    description: 'Все преимущества плагина'
+    default: op
+    children:
+      guishoper.reload: true
+      guishoper.use: true
+      guishoper.addItem: true
+  guishoper.reload:
+    description: 'Перезагрузка плагина'
+    default: op
+  guishoper.use:
+    description: 'Использование магазина'
+    default: true
+  guishoper.addItem:
+    description: 'Сохранить предмет'
+    default: op
