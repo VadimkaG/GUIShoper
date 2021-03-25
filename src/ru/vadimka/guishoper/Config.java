@@ -204,13 +204,11 @@ public abstract class Config {
 				}
 				
 				String menuMaterial = y.getString(menu+".material").toUpperCase();
-				Short menuDamage = (short)y.getInt(menu+".damage");
 				try {
 					Material.valueOf(menuMaterial);
 				} catch (Exception e) {
 					Utils.print("[menus][material] Ошибка "+menu+": "+menuMaterial);
 					menuMaterial = "STONE";
-					menuDamage = 0;
 				}
 				
 				List<String> menuItemsT = (List<String>) y.getList(menu+".items");
@@ -253,7 +251,7 @@ public abstract class Config {
 					menuItems.put(item, getItem(ConfigItems,item,slot));
 					slot++;
 				}
-				menus.put(menu, new Menu(menuName,menuDescription,MenuSlot,slots,menuMaterial,menuDamage,menuItems,menuPermission));
+				menus.put(menu, new Menu(menuName,menuDescription,MenuSlot,slots,menuMaterial,menuItems,menuPermission));
 				menusSlots.put(MenuSlot, menu);
 				MenuSlot++;
 			}
@@ -272,7 +270,6 @@ public abstract class Config {
 		y.addDefault("testmenu.name", "Тестовое меню");
 		y.addDefault("testmenu.description", "Это|тестовое|меню");
 		y.addDefault("testmenu.material", "STONE");
-		y.addDefault("testmenu.damage", 0);
 		y.addDefault("testmenu.permission", "");
 		List<String> arr2 = new ArrayList<String>();
 		arr2.add("testItem");

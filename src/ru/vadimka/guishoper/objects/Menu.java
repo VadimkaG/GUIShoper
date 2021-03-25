@@ -7,18 +7,16 @@ public class Menu {
 	private String DESCRIPTION;
 	private String PERMISSION;
 	private String MATERIAL;
-	private Short DAMAGE;
 	private Integer SLOT;
 	private HashMap<Integer,String> SLOTS;
 	private HashMap<String,Item> ITEMS;
-	
-	public Menu(String name, String description, Integer slot, HashMap<Integer,String> slots, String material, Short damage, HashMap<String,Item> items, String permission) {
+
+	public Menu(String name, String description, Integer slot, HashMap<Integer,String> slots, String material, HashMap<String,Item> items, String permission) {
 		NAME = name;
 		ITEMS = items;
 		DESCRIPTION = description;
 		PERMISSION = permission;
 		MATERIAL = material;
-		DAMAGE = damage;
 		SLOTS = slots;
 		SLOT = slot;
 	}
@@ -74,15 +72,6 @@ public class Menu {
 	 */
 	public String getMaterial() {
 		return MATERIAL;
-	}
-	/**
-	 * Получить "Урон" иконки
-	 * например GLASS:2
-	 * 2 это и есть "урон"
-	 * @return
-	 */
-	public Short getDamage() {
-		return DAMAGE;
 	}
 	/**
 	 * Количество предметов в меню

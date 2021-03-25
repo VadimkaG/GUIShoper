@@ -63,7 +63,7 @@ public class Item {
 		Map<Enchantment, Integer> ench= ITEM.getItemMeta().getEnchants();
 		for (Map.Entry<Enchantment, Integer> item : ench.entrySet()) {
 			message = Config.ENCHANT_DESCRIPTION;
-			DESCRIPTION = DESCRIPTION.replace("%NAME%", item.getKey().getName());
+			DESCRIPTION = DESCRIPTION.replace("%NAME%", item.getKey().getKey().getKey());
 			DESCRIPTION = DESCRIPTION.replace("%LVL%", String.valueOf(item.getValue()));
 			out += message;
 			if (first)first = false;

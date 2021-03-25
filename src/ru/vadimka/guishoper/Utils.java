@@ -47,7 +47,7 @@ public abstract class Utils {
 		for (Map.Entry<String, Menu> i : Config.menus.entrySet()) {
 			Menu val = i.getValue();
 			if (val.getSlot() > cells-10) continue;
-			ItemStack itemN = new ItemStack(Material.valueOf(val.getMaterial()),1,val.getDamage());
+			ItemStack itemN = new ItemStack(Material.valueOf(val.getMaterial()),1);
 			ItemMeta meta = itemN.getItemMeta();
 			meta.setDisplayName(Utils.getColors(val.getName()));
 			List<String> lore = Arrays.asList(Utils.getColors(val.getDescription()).split("\\|"));
